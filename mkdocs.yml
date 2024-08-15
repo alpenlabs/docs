@@ -1,0 +1,87 @@
+# yaml-language-server: $schema=https://squidfunk.github.io/mkdocs-material/schema.json
+site_name: Documentation
+site_url: https://docs.stratabtc.org
+repo_url: https://github.com/alpenlabs/strata
+repo_name: ""
+plugins:
+  - search
+theme:
+  name: material
+  logo: assets/logo.png
+  icon:
+    repo: fontawesome/brands/github
+  favicon: assets/favicon.png
+  palette:
+    - scheme: default
+      primary: white
+      accent: custom
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: black
+      accent: custom
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  font:
+    text: Inter
+    code: Roboto Mono
+  features:
+    - navigation.instant
+    - navigation.footer
+    - search.suggest
+    - search.highlight
+    - toc.follow
+    - toc.integrate
+    - content.code.copy
+    - content.code.annotate
+extra:
+  homepage: https://stratabtc.org
+  generator: false
+markdown_extensions:
+  - tables
+  - toc:
+      permalink: true
+  - attr_list
+  - md_in_html
+  - footnotes
+  - admonition
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      linenums: true
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
+extra_css:
+  - stylesheets/extra.css
+
+nav:
+  - Introduction to Strata: index.md
+  - How Strata Works:
+      # - Specifications: technical/specs.md
+      - System Architecture: technical/architecture.md
+      - Transaction Lifecycle: technical/transaction-lifecycle.md
+      - Bitcoin Bridge: technical/bitcoin-bridge.md
+      - Node Types: technical/node-types.md
+      - Comparing Strata and Ethereum: technical/comparing-ethereum.md
+  - Community:
+      - Website: https://stratabtc.org
+      - GitHub: https://github.com/alpenlabs/strata
+      - Telegram: https://t.me/Strata_Community
+      - Twitter: https://twitter.com/Strata_BTC

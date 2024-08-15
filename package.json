@@ -1,0 +1,26 @@
+{
+  "name": "alpen-docs",
+  "version": "0.1.0",
+  "description": "Public documentation related to Alpen Labs products.",
+  "scripts": {
+    "lint:check": "eslint .",
+    "lint:fix": "eslint --fix .",
+    "spell:check": "cspell lint \"**/*.md\"",
+    "format:check": "prettier --config .prettierrc.yaml --check .",
+    "format:fix": "prettier --config .prettierrc.yaml --write .",
+    "sort:project-words": "sort -o project-words.txt project-words.txt"
+  },
+  "keywords": [],
+  "type": "module",
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@eslint/eslintrc": "^3.1.0",
+    "@eslint/js": "^9.5.0",
+    "cspell": "^8.9.0",
+    "eslint": "^9.5.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-markdownlint": "^0.6.0",
+    "prettier": "^3.3.2"
+  }
+}

@@ -1,0 +1,4 @@
+docs/javascripts/* linguist-vendored
+eslint.config.mjs linguist-generated
+package-lock.json linguist-generated
+package.json linguist-generated

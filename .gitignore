@@ -1,0 +1,15 @@
+# mkdocs-material build
+site/
+.cache
+__pycache__
+
+# IDE files
+.vscode/
+.idea/
+
+# JavaScript build artifacts
+node_modules/
+.pnpm-store/
+
+# macOS files
+.DS_Store
