@@ -1,0 +1,10 @@
+# number of characters per line
+printWidth: 80
+# convert tabs to spaces
+useTabs: false
+# number of spaces per tab
+tabWidth: 2
+# do not wrap prose in markdown based on `printWidth`
+proseWrap: preserve
+# use double quotes
+singleQuote: false

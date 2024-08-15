@@ -1,0 +1,108 @@
+# yaml-language-server: $schema=https://squidfunk.github.io/mkdocs-material/schema.json
+site_name: Alpen Labs Documentation
+site_url: https://alpenlabs.github.io/docs/
+repo_name: alpenlabs/docs
+repo_url: https://github.com/alpenlabs/docs
+copyright: Copyright &copy; 2024 Alpen Labs, Inc.
+plugins:
+  - search
+theme:
+  name: material
+  logo: assets/logo.svg
+  icon:
+    repo: fontawesome/brands/github
+  favicon: assets/logo.svg
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  font:
+    text: Roboto
+    code: Roboto Mono
+  features:
+    - navigation.tabs
+    - navigation.instant
+    - navigation.footer
+    - search.suggest
+    - search.highlight
+    - toc.follow
+    - toc.integrate
+    - content.code.copy
+    - content.code.annotate
+extra:
+  homepage: https://alpenlabs.io
+  generator: false
+  social:
+    - icon: fontawesome/solid/globe
+      link: https://alpenlabs.io
+    - icon: fontawesome/brands/twitter
+      link: https://x.com/alpenlabs
+    - icon: fontawesome/brands/github
+      link: https://github.com/alpenlabs
+    - icon: fontawesome/solid/paper-plane
+      link: mailto:contact@alpenlabs.io
+markdown_extensions:
+  - tables
+  - attr_list
+  - md_in_html
+  - footnotes
+  - admonition
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      linenums: true
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
+extra_css:
+  - stylesheets/extra.css
+
+nav:
+  - Introduction to Strata: index.md
+  - Welcome:
+      - Getting Started: getting-started.md
+      - Acknowledgements: acknowledgements.md
+  - Build Strata Apps:
+      - Developing Strata Programs: build-strata/deploying-programs.md
+      - Comparing Strata and Ethereum: build-strata/comparing-ethereum.md
+      - Developer Resources: build-strata/developer-resources.md
+      - Troubleshooting: build-strata/troubleshooting.md
+  - Run a Strata Node:
+      - Hardware Requirements: run-strata/hardware.md
+      - Operator Guide: run-strata/operator-guide.md
+      - Connecting you Wallet: run-strata/connecting-wallet.md
+  - Bridge to Strata:
+      - Bridge CLI: bridge/cli.md
+  - How Strata Works:
+      - Specifications: technical/specs.md
+      - System Architecture: technical/architecture.md
+      - Transaction Lifecycle: technical/transaction-lifecycle.md
+      - Transaction Fees: technical/transaction-fees.md
+      - Bitcoin Bridge: technical/bitcoin-bridge.md
+      - Node Types: technical/node-types.md
+  - Research:
+      - SNARKnado-based bridge: research/snarknado.md
+  - Security: security.md
