@@ -1,1 +1,0 @@
-# SNARKnado-based Bridge
