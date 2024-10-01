@@ -55,7 +55,7 @@ Let's break down what this means:
   the only way to reorganize this block is to reorganize
   the bitcoin block that the Strata block was confirmed in.
 
-You can find detailed technical information in the "How Strata Works"
+You can find detailed technical information in the "How Strata works"
 section of this documentation.
 
 !!! note
