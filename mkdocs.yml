@@ -74,11 +74,9 @@ extra_css:
 nav:
   - Introduction to Strata: index.md
   - How Strata works:
-      # - Specifications: technical/specs.md
       - System architecture: technical/architecture.md
       - Transaction lifecycle: technical/transaction-lifecycle.md
       - Bitcoin bridge: technical/bitcoin-bridge.md
-      - Node types: technical/node-types.md
       - Comparing Strata and Ethereum: technical/comparing-ethereum.md
   - Community:
       - Website: https://stratabtc.org
