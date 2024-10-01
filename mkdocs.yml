@@ -1,8 +1,8 @@
 # yaml-language-server: $schema=https://squidfunk.github.io/mkdocs-material/schema.json
 site_name: Documentation
 site_url: https://docs.stratabtc.org
-# repo_url: https://github.com/alpenlabs/strata
-# repo_name: ""
+#repo_url: https://github.com/alpenlabs/strata
+#repo_name: ""
 plugins:
   - search
 theme:
@@ -80,6 +80,6 @@ nav:
       - Comparing Strata and Ethereum: technical/comparing-ethereum.md
   - Community:
       - Website: https://stratabtc.org
-   # - GitHub: https://github.com/alpenlabs/docs/pull/5
+      #- GitHub: https://github.com/alpenlabs/docs/pull/5
       - Telegram: https://t.me/Strata_Community
       - Twitter: https://twitter.com/Strata_BTC
