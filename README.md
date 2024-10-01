@@ -1,6 +1,6 @@
 # Strata - Public Docs
 
-This repository contains all private devnet documentation related to [Strata](https://stratabtc.org).
+This repository contains all public devnet documentation related to [Strata](https://stratabtc.org).
 
 ## Getting Started
 
