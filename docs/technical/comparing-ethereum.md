@@ -12,8 +12,6 @@ During the devnet phase, Strata can be considered a Type 1 zkEVM.
     In a future release,
     Strata developers plan to introduce changes
     that will result in a Type 2.5 zkEVM rating.
-    Watch the Strata [issues repo](https://github.com/alpenlabs/strata/issues)
-    to stay up to date with proposed consensus changes.
 
 ## Blockchain functionality
 
