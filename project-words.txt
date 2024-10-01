@@ -31,6 +31,7 @@ satoshis
 secp
 snarknado
 squidfunk
+standardness
 timelock
 txid
 unspendable
