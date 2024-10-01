@@ -1,4 +1,4 @@
-# Node Types
+# Node types
 
 Strata consists of different types of nodes,
 each serving specific roles within the network.
