@@ -7,7 +7,8 @@
     Any references to bitcoin or BTC in this documentation should be read
     as "bitcoin signet" or "signet BTC" when describing the current system.
 
-The Strata bitcoin bridge enables the transfer of BTC between the bitcoin and Strata blockchains.
+The Strata bitcoin bridge enables the transfer of BTC between the bitcoin
+and Strata blockchains.
 The bridge is run by a federation of operators who
 co-sign transactions to move BTC into and out of the Strata bridge address.
 
@@ -52,8 +53,9 @@ who sends 10[^fees] BTC to a P2TR address, where:
 
 [^nums]:
     "Nothing Up My Sleeve" (NUMS) point,
-    i.e., a point with unknown discrete logarithm, chosen as $H = lift_x(G)$
-    where $G$ is the secp256k1 generator point,
+    i.e., a point with unknown discrete logarithm,
+    constructed by taking the hash of the standard uncompressed encoding of
+    the [secp256k1](https://www.secg.org/sec2-v2.pdf) base point $G$ as $X$ coordinate,
     as per [BIP 341](https://github.com/bitcoin/bips/blob/master/bip-0341.mediawiki#constructing-and-spending-taproot-outputs).
     An unspendable pubkey is a point on the curve whose discrete log
     is not known with respect to the generator point $G$.
@@ -63,7 +65,7 @@ who sends 10[^fees] BTC to a P2TR address, where:
 1. The script path spend has two paths:
    1. "Deposit path", an $N$-of-$N$ multisig path,
       where $N$ is the number of operators in the bridge.
-   2. "Take back" path,
+   1. "Take back" path,
       which allows the user to take back their funds if the bridge fails to
       move funds from the Deposit Request Transaction (DRT)
       into the bridge address within a two-week period,
@@ -122,14 +124,14 @@ fulfill the request on bitcoin:
 
 1. The user requests a withdrawal making sure to burn the
    same amount of `BTC` on Strata.
-2. The assigned operator creates and signs a Withdrawal Transaction
+1. The assigned operator creates and signs a Withdrawal Transaction
    (WT) where they spend 10 BTC from the bridge address' UTXO set,
    while subtracting the operator's fee and the mining fee,
    and requests the other $N−1$ operators to sign
    the Withdrawal Transaction.
-3. Once all the signatures have been aggregated, the transaction is submitted to
+1. Once all the signatures have been aggregated, the transaction is submitted to
    bitcoin.
-4. Once the transaction is confirmed,
+1. Once the transaction is confirmed,
    the withdrawal request is fulfilled.
 
 The withdrawal flow is shown below:
