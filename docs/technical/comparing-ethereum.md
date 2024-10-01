@@ -25,7 +25,7 @@ Comparing differences in how Strata and Ethereum functionally operate:
 | ---------------- | ------------------------------------------------------------------------------------------------------ | -------------- |
 | Consensus:       | Proof of Work                                                                                          | Proof of Stake |
 | Gas asset:       | BTC                                                                                                    | ETH            |
-| Block gas limit: | 8,000,000                                                                                              | 30,000,000     |
+| Block gas limit: | 15,000,000                                                                                             | 30,000,000     |
 | Block time:      | ~5s                                                                                                    | ~12s           |
 | Finality:        | Probabilistic, blocks are confirmed in<br> batches on a private bitcoin signet<br> about once per hour | ~15m           |
 
