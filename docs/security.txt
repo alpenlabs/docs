@@ -1,3 +1,4 @@
 Contact: https://github.com/alpenlabs/strata/issues
-Expires: 2026-01-01T04:59:00.000Z
+Expires: 2024-12-31T23:59:00.000Z
 Preferred-Languages: en
+Canonical: https://docs.stratabtc.org/security.txt
