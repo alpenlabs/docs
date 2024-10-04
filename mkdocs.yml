@@ -78,6 +78,7 @@ nav:
       - Transaction lifecycle: technical/transaction-lifecycle.md
       - Bitcoin bridge: technical/bitcoin-bridge.md
       - Comparing Strata and Ethereum: technical/comparing-ethereum.md
+  - CLI usage: cli.md
   - Community:
       - Website: https://stratabtc.org
       #- GitHub: https://github.com/alpenlabs/docs/pull/5
