@@ -23,19 +23,21 @@ The user's application layer interacts with Strata in three ways:
 <figure markdown="span">
   ![Architecture Diagram](../images/architecture_diagram.jpg){ loading=lazy }
   <figcaption>
-      This diagram illustrates the overall system architecture and
-      the data flow between different components of Strata
-      and the entities interacting with the system.
-      There are three layers: bitcoin layer at the base, Strata layer above it,
-      and the user application layer that sits on top of the Strata layer.
-      The direction of arrows indicate the direction of
-      data flow between the components,
-      and the text in the arrows indicate the data.
-      The centralized services are the services that are run by Alpen Labs.
-      Other components within Strata layer (the bundler and the full node)
-      can be run by anyone in our devnet community.
-   </figcaption>
+    Architecture diagram.
+  </figcaption>
 </figure>
+
+The diagram above illustrates the overall system architecture and
+the data flow between different components of Strata
+and the entities interacting with the system.
+There are three layers: bitcoin layer at the base, Strata layer above it,
+and the user application layer that sits on top of the Strata layer.
+The direction of arrows indicate the direction of
+data flow between the components,
+and the text in the arrows indicate the data.
+The centralized services are the services that are run by Alpen Labs.
+Other components within Strata layer (the bundler and the full node)
+can be run by anyone in our devnet community.
 
 ## User application layer
 
