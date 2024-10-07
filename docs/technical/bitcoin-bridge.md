@@ -8,7 +8,7 @@
     as "bitcoin signet" or "signet BTC" when describing the current system.
 
 The Strata bitcoin bridge enables the transfer of BTC between the bitcoin
-and Strata blockchain.
+and Strata blockchains.
 The bridge is run by a federation of operators who
 co-sign transactions to move BTC into and out of the Strata bridge address.
 
