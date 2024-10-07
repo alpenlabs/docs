@@ -31,6 +31,8 @@ it is broadcast to bitcoin for confirmation.
 
     Deposits and withdrawals are allowed in a denomination of $D$ BTC where
     $D = 10 \ \text{BTC}$ is a value predefined by the bridge federation.
+    The operator fee is set at 5% of the bridge denomination.
+    The minimum relay fee for transactions is 10 satoshis per vByte.
 
 !!! info
 
@@ -44,7 +46,9 @@ it is broadcast to bitcoin for confirmation.
 The deposit process is initiated by the user,
 who sends 10[^fees] BTC to a P2TR address, where:
 
-[^fees]: The user must pay the bitcoin network fees for both the Deposit Request and Deposit Transactions.
+[^fees]:
+    The user must pay the bitcoin network fees for both
+    the Deposit Request and Deposit Transactions.
 
 1. The key path spend is unspendable, following
    [BIP 341](https://github.com/bitcoin/bips/blob/master/bip-0341.mediawiki#constructing-and-spending-taproot-outputs)
@@ -68,8 +72,8 @@ who sends 10[^fees] BTC to a P2TR address, where:
    1. "Take back" path,
       which allows the user to take back their funds if the bridge fails to
       move funds from the Deposit Request Transaction (DRT)
-      into the bridge address within a two-week period,
-      i.e. it is time-locked and the user provides a signature to spend it.
+      into the bridge address within a 1-week period,
+      i.e. it is time-locked and the user can spend it by providing a signature.
 
 This transaction has some metadata attached to it, in the form of an `OP_RETURN`
 output, that can be up to 80 bytes long (according to bitcoin standardness policy),
@@ -122,12 +126,14 @@ sequenceDiagram
 The user requests a withdrawal on Strata and an operator is assigned to
 fulfill the request on bitcoin:
 
-1. The user requests a withdrawal making sure to burn the
-   same amount of `BTC` on Strata.
-1. The assigned operator creates and signs a Withdrawal Transaction
-   (WT) where they spend 10 BTC from the bridge address' UTXO set,
-   while subtracting the operator's fee and the mining fee,
-   and requests the other $N−1$ operators to sign
+1. The user initiates a withdrawal request, in response to which the corresponding
+   amount of Strata BTC is burned.
+1. After the burn is confirmed, the assigned operator creates and signs
+   Withdrawal Transaction (WT) on the bitcoin blockchain where they spend 10 BTC
+   from the bridge address' UTXO set,
+   while subtracting the operator's fee (5% of the bridge denomination)
+   and the mining fee (minimum 10 satoshis per vByte),
+   and requests the other $N-1$ operators to sign
    the Withdrawal Transaction.
 1. Once all the signatures have been aggregated, the transaction is submitted to
    bitcoin.
