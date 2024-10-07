@@ -8,7 +8,7 @@
     as "bitcoin signet" or "signet BTC" when describing the current system.
 
 The Strata bitcoin bridge enables the transfer of BTC between the bitcoin
-and Strata blockchains.
+and Strata blockchain.
 The bridge is run by a federation of operators who
 co-sign transactions to move BTC into and out of the Strata bridge address.
 
@@ -31,6 +31,7 @@ it is broadcast to bitcoin for confirmation.
 
     Deposits and withdrawals are allowed in a denomination of $D$ BTC where
     $D = 10 \ \text{BTC}$ is a value predefined by the bridge federation.
+    The operator fee is set at 5% of the bridge denomination. The minimum relay fee for transactions is 10 satoshis per vByte.
 
 !!! info
 
@@ -62,14 +63,14 @@ who sends 10[^fees] BTC to a P2TR address, where:
     This can be verified by revealing the random scalar $r$
     used to generate the pubkey by shifting the NUMS point.
 
-1. The script path spend has two paths:
-   1. "Deposit path", an $N$-of-$N$ multisig path,
+2. The script path spend has two paths:
+      1. "Deposit path", an $N$-of-$N$ multisig path,
       where $N$ is the number of operators in the bridge.
-   1. "Take back" path,
+      2. "Take back" path,
       which allows the user to take back their funds if the bridge fails to
       move funds from the Deposit Request Transaction (DRT)
-      into the bridge address within a two-week period,
-      i.e. it is time-locked and the user provides a signature to spend it.
+      into the bridge address within a 1-week period,
+      i.e. it is time-locked and the user can spend it by providing a signature.
 
 This transaction has some metadata attached to it, in the form of an `OP_RETURN`
 output, that can be up to 80 bytes long (according to bitcoin standardness policy),
@@ -77,12 +78,12 @@ and is composed of the following data:
 
 1. Magic bytes.
    These take $11$ bytes and are used to identify the bridge.
-1. "Take back" TapLeaf hash.
+2. "Take back" TapLeaf hash.
    These take $32$ bytes and are used to validate the
    Deposit Request Transaction (DRT),
    while also necessary for the control block required
    to spend the P2TR output via the $N$-of-$N$ Tapscript.
-1. Execution Layer (EL) address.
+3. Execution Layer (EL) address.
    The Execution Layer (EL) address is the Strata address where
    the user wants to receive the BTC in Strata.
    It is a 20-byte Ethereum Virtual Machine (EVM) address.
@@ -122,16 +123,15 @@ sequenceDiagram
 The user requests a withdrawal on Strata and an operator is assigned to
 fulfill the request on bitcoin:
 
-1. The user requests a withdrawal making sure to burn the
-   same amount of `BTC` on Strata.
-1. The assigned operator creates and signs a Withdrawal Transaction
-   (WT) where they spend 10 BTC from the bridge address' UTXO set,
-   while subtracting the operator's fee and the mining fee,
-   and requests the other $N−1$ operators to sign
+1. The user initiates a withdrawal request, in response to which the corresponding amount of strata BTC or `sBTC` is burned from Strata.
+2. After the burn is confirmed, the assigned operator creates and signs a Withdrawal Transaction
+   (WT) on the Bitcoin blockchain where they spend 10 BTC from the bridge address' UTXO set,
+   while subtracting the operator's fee (5% of the bridge denomination) and the mining fee (minimum 10 satoshis per vByte),
+   and requests the other $N-1$ operators to sign
    the Withdrawal Transaction.
-1. Once all the signatures have been aggregated, the transaction is submitted to
+3. Once all the signatures have been aggregated, the transaction is submitted to
    bitcoin.
-1. Once the transaction is confirmed,
+4. Once the transaction is confirmed,
    the withdrawal request is fulfilled.
 
 The withdrawal flow is shown below:
