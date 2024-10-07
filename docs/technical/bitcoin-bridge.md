@@ -31,7 +31,8 @@ it is broadcast to bitcoin for confirmation.
 
     Deposits and withdrawals are allowed in a denomination of $D$ BTC where
     $D = 10 \ \text{BTC}$ is a value predefined by the bridge federation.
-    The operator fee is set at 5% of the bridge denomination. The minimum relay fee for transactions is 10 satoshis per vByte.
+    The operator fee is set at 5% of the bridge denomination.
+    The minimum relay fee for transactions is 10 satoshis per vByte.
 
 !!! info
 
