@@ -63,10 +63,10 @@ who sends 10[^fees] BTC to a P2TR address, where:
     This can be verified by revealing the random scalar $r$
     used to generate the pubkey by shifting the NUMS point.
 
-2. The script path spend has two paths:
+1. The script path spend has two paths:
    1. "Deposit path", an $N$-of-$N$ multisig path,
       where $N$ is the number of operators in the bridge.
-   2. "Take back" path,
+   1. "Take back" path,
       which allows the user to take back their funds if the bridge fails to
       move funds from the Deposit Request Transaction (DRT)
       into the bridge address within a 1-week period,
@@ -78,12 +78,12 @@ and is composed of the following data:
 
 1. Magic bytes.
    These take $11$ bytes and are used to identify the bridge.
-2. "Take back" TapLeaf hash.
+1. "Take back" TapLeaf hash.
    These take $32$ bytes and are used to validate the
    Deposit Request Transaction (DRT),
    while also necessary for the control block required
    to spend the P2TR output via the $N$-of-$N$ Tapscript.
-3. Execution Layer (EL) address.
+1. Execution Layer (EL) address.
    The Execution Layer (EL) address is the Strata address where
    the user wants to receive the BTC in Strata.
    It is a 20-byte Ethereum Virtual Machine (EVM) address.
@@ -123,15 +123,17 @@ sequenceDiagram
 The user requests a withdrawal on Strata and an operator is assigned to
 fulfill the request on bitcoin:
 
-1. The user initiates a withdrawal request, in response to which the corresponding amount of strata BTC or `sBTC` is burned from Strata.
-2. After the burn is confirmed, the assigned operator creates and signs a Withdrawal Transaction
-   (WT) on the Bitcoin blockchain where they spend 10 BTC from the bridge address' UTXO set,
-   while subtracting the operator's fee (5% of the bridge denomination) and the mining fee (minimum 10 satoshis per vByte),
+1. The user initiates a withdrawal request, in response to which the corresponding 
+   amount of Strata BTC is burned.
+1. After the burn is confirmed, the assigned operator creates and signs a Withdrawal Transaction
+   (WT) on the bitcoin blockchain where they spend 10 BTC from the bridge address' UTXO set,
+   while subtracting the operator's fee (5% of the bridge denomination) and the mining fee 
+   (minimum 10 satoshis per vByte),
    and requests the other $N-1$ operators to sign
    the Withdrawal Transaction.
-3. Once all the signatures have been aggregated, the transaction is submitted to
+1. Once all the signatures have been aggregated, the transaction is submitted to
    bitcoin.
-4. Once the transaction is confirmed,
+1. Once the transaction is confirmed,
    the withdrawal request is fulfilled.
 
 The withdrawal flow is shown below:
