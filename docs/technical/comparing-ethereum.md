@@ -4,8 +4,8 @@
 
 Strata is an EVM-compatible blockchain.
 The execution client used by the Strata block producer is based on Reth
-and is fully compatible with the EVM spec up to the 
-[Shanghai](https://github.com/ethereum/execution-specs/blob/master/network-upgrades/mainnet-upgrades/shanghai.md) 
+and is fully compatible with the EVM spec up to the
+[Shanghai](https://github.com/ethereum/execution-specs/blob/master/network-upgrades/mainnet-upgrades/shanghai.md)
 release. During the devnet phase, Strata can be considered a Type 1 zkEVM.
 
 !!! note
