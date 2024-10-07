@@ -1,5 +1,6 @@
 NUMS
 PUSHBYTES
+Rollkit
 Taproot
 Tapscript
 Taptree
@@ -24,15 +25,19 @@ mermaidjs
 mkdocs
 multisigs
 offchain
+preconfirmations
 println
 pseudocode
 pubkey
+roadmaps
+rollups
 satoshis
 secp
 snarknado
 squidfunk
 standardness
 timelock
+trustlessly
 txid
 unspendable
 utxo

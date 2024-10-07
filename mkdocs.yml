@@ -75,6 +75,7 @@ nav:
   - Introduction to Strata: index.md
   - How Strata works:
       - System architecture: technical/architecture.md
+      - Design rationale: technical/design-rationale.md
       - Transaction lifecycle: technical/transaction-lifecycle.md
       - Bitcoin bridge: technical/bitcoin-bridge.md
       - Comparing Strata and Ethereum: technical/comparing-ethereum.md
