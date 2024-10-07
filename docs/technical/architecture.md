@@ -84,8 +84,7 @@ Internally, a full node is constructed similarly to a post-merge Ethereum full n
 keeping modularity in mind,
 separating the node into an execution layer
 and an orchestration layer. They interact with each other
-through a slightly modified Engine API, which we extended to handle withdrawals
-from Strata to bitcoin.
+through a slightly modified Engine API, which we extended to handle bridge transfers in/out of execution layer.
 
 For devnet, Alpen is running a full node that developers
 can connect to via RPC to interact with Strata.
@@ -131,6 +130,10 @@ from genesis to the latest state.
 The proof is passed to the sequencer,
 who then posts it to the bitcoin network along with the batch metadata
 (state commitments).
+
+!!! info
+
+    For devnet, even though Strata produces recursive proofs and posts to our private signet network, we use devnet as a testing and experimentation ground for proofs, starting and stopping proof generation at unpredictable times. Therefore, external systems should not assume that each proof proves state transition from genesis. Rather, each proof accompanies public inputs that mention the range of batches it proves recursively. Full nodes in the Strata devnet network do not depend on proofs but can re-execute blocks to transition state. The next Strata milestone will support nodes that fully depend on proofs posted on the bitcoin layer for their state.
 
 ## Bridge operator
 
