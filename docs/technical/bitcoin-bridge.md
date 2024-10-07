@@ -64,9 +64,9 @@ who sends 10[^fees] BTC to a P2TR address, where:
     used to generate the pubkey by shifting the NUMS point.
 
 2. The script path spend has two paths:
-      1. "Deposit path", an $N$-of-$N$ multisig path,
+   1. "Deposit path", an $N$-of-$N$ multisig path,
       where $N$ is the number of operators in the bridge.
-      2. "Take back" path,
+   2. "Take back" path,
       which allows the user to take back their funds if the bridge fails to
       move funds from the Deposit Request Transaction (DRT)
       into the bridge address within a 1-week period,
