@@ -79,12 +79,12 @@ and is composed of the following data:
 
 1. Magic bytes.
    These take $11$ bytes and are used to identify the bridge.
-2. "Take back" TapLeaf hash.
+1. "Take back" TapLeaf hash.
    These take $32$ bytes and are used to validate the
    Deposit Request Transaction (DRT),
    while also necessary for the control block required
    to spend the P2TR output via the $N$-of-$N$ Tapscript.
-3. Execution Layer (EL) address.
+1. Execution Layer (EL) address.
    The Execution Layer (EL) address is the Strata address where
    the user wants to receive the BTC in Strata.
    It is a 20-byte Ethereum Virtual Machine (EVM) address.
