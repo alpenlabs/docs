@@ -31,7 +31,8 @@ it is broadcast to bitcoin for confirmation.
 
     Deposits and withdrawals are allowed in a denomination of $D$ BTC where
     $D = 10 \ \text{BTC}$ is a value predefined by the bridge federation.
-    The operator fee is set at 5% of the bridge denomination. 
+
+    The operator fee is set at 5% of the bridge denomination.
     The minimum relay fee for transactions is 10 satoshis per vByte.
 
 !!! info
@@ -46,7 +47,9 @@ it is broadcast to bitcoin for confirmation.
 The deposit process is initiated by the user,
 who sends 10[^fees] BTC to a P2TR address, where:
 
-[^fees]: The user must pay the bitcoin network fees for both the Deposit Request and Deposit Transactions.
+[^fees]:
+    The user must pay the bitcoin network fees for both
+    the Deposit Request and Deposit Transactions.
 
 1. The key path spend is unspendable, following
    [BIP 341](https://github.com/bitcoin/bips/blob/master/bip-0341.mediawiki#constructing-and-spending-taproot-outputs)
