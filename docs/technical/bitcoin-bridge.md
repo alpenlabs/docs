@@ -65,12 +65,12 @@ who sends 10[^fees] BTC to a P2TR address, where:
     used to generate the pubkey by shifting the NUMS point.
 
 1. The script path spend has two paths:
-    - "Deposit path", an $N$-of-$N$ multisig path,
+    1. "Deposit path", an $N$-of-$N$ multisig path,
     where $N$ is the number of operators in the bridge.
-    - "Take back" path,
+    1. "Take back" path,
     which allows the user to take back their funds if the bridge fails to
     move funds from the Deposit Request Transaction (DRT)
-    into the bridge address within a approximately 8.5 hrs,
+    into the bridge address within approximately 8.5 hours,
     i.e. it is time-locked and the user can spend it by providing a signature.
 
 This transaction has some metadata attached to it, in the form of an `OP_RETURN`
@@ -79,12 +79,12 @@ and is composed of the following data:
 
 1. Magic bytes.
    These take $11$ bytes and are used to identify the bridge.
-1. "Take back" TapLeaf hash.
+2. "Take back" TapLeaf hash.
    These take $32$ bytes and are used to validate the
    Deposit Request Transaction (DRT),
    while also necessary for the control block required
    to spend the P2TR output via the $N$-of-$N$ Tapscript.
-1. Execution Layer (EL) address.
+3. Execution Layer (EL) address.
    The Execution Layer (EL) address is the Strata address where
    the user wants to receive the BTC in Strata.
    It is a 20-byte Ethereum Virtual Machine (EVM) address.
