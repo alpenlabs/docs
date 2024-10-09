@@ -125,7 +125,7 @@ The user requests a withdrawal on Strata and an operator is assigned to
 fulfill the request on bitcoin:
 
 1. The user initiates a withdrawal request, in response to which
-    the corresponding amount of strata BTC or `sBTC` is burned from Strata.
+    the corresponding amount of strata BTC or `S-BTC` is burned from Strata.
 1. After the burn is confirmed, the assigned operator creates
    and signs a Withdrawal Transaction (WT) on the Bitcoin blockchain
    where they spend 10 BTC from the bridge address' UTXO set,
