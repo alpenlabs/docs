@@ -70,6 +70,9 @@ who sends 10[^fees] BTC to a P2TR address, where:
 1. The script path spend has two paths:
    1. "Deposit path", an $N$-of-$N$ multisig path,
       where $N$ is the number of operators in the bridge.
+      Note that this uses Schnorr key aggregation,
+      hence the signature is aggregated into a single signature that
+      validates all $N$ operators' signatures.
    1. "Take back" path,
       which allows the user to take back their funds if the bridge fails to
       move funds from the Deposit Request Transaction (DRT)
@@ -77,7 +80,10 @@ who sends 10[^fees] BTC to a P2TR address, where:
       i.e. it is time-locked and the user can spend it by providing a signature.
 
 This transaction has some metadata attached to it, in the form of an `OP_RETURN`
-output, that can be up to 80 bytes long (according to bitcoin standardness policy),
+output, that must be the **second** output of the transaction in order for the
+sequencer to be able to detect the transaction.
+The `OP_RETURN` output can be up to 80 bytes long
+(according to bitcoin standardness policy),
 and is composed of the following data:
 
 1. Magic bytes.

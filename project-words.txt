@@ -1,6 +1,7 @@
 NUMS
 PUSHBYTES
 Rollkit
+Schnorr
 Taproot
 Tapscript
 Taptree
