@@ -1,0 +1,16 @@
+:root {
+  --md-accent-fg-color: #bc512f;
+  --md-accent-fg-color--light: #bc512f;
+  --md-accent-fg-color--dark: #bc512f;
+  --md-accent-bg-color: #bc512f;
+  --md-accent-bg-color--light: #bc512f;
+  --md-accent-bg-color--dark: #bc512f;
+}
+
+.red {
+  color: red;
+}
+
+.green {
+  color: green;
+}
