@@ -31,6 +31,7 @@ spell-check:
 spell-add *WORDS:
     @echo "Adding {{ WORDS }} to the dictionary"
     for word in {{ WORDS }}; do echo $word >> project-words.txt; done
+    @just spell-sort
 
 # Sort the dictionary
 spell-sort:
