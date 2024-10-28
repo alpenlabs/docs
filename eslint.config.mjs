@@ -24,6 +24,7 @@ export default [
   ...compat.extends("plugin:markdownlint/recommended").map((config) => ({
     ...config,
     files: ["**/*.md"],
+    ignores: [".github/PULL_REQUEST_TEMPLATE.md"],
   })),
   {
     files: ["**/*.md"],
@@ -35,6 +36,7 @@ export default [
     rules: {
       "markdownlint/md033": "off", // inline HTML
       "markdownlint/md046": "off", // code block style
+      "markdownlint/md041": "off", // first line in file
       "markdownlint/md024": [
         "error",
         {
