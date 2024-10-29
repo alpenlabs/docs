@@ -2,8 +2,8 @@
 
 !!! note
 
-    Strata's devnet will be launching soon.
-    To build on devnet,
+    Strata Devnet is live!
+    To build on the devnet,
     please apply using the devnet form on our [website](https://stratabtc.org/).
 
 Strata gives developers the freedom to program nearly
