@@ -1,5 +1,5 @@
 # yaml-language-server: $schema=https://squidfunk.github.io/mkdocs-material/schema.json
-site_name: Documentation
+site_name: ""
 site_url: https://docs.stratabtc.org
 #repo_url: https://github.com/alpenlabs/strata
 #repo_name: ""
