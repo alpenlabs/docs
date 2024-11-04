@@ -106,7 +106,7 @@ The batch proof proves the following:
 
 The batch proof is recursive,
 so by verifying the latest batch proof a client can verify that
-the Strata state transitions from genesis to the latest block included included
+the Strata state transitions from genesis to the latest block included
 in the batch are valid.
 This batch proof is passed to the sequencer for writing to bitcoin.
 
