@@ -15,6 +15,11 @@ serve-docker:
     @echo "Serving the site locally using Docker"
     docker run --rm -u "$(id -u):$(id -g)" -v "$PWD":/docs -p 8000:8000 squidfunk/mkdocs-material
 
+# Serve the site locally using Poetry
+serve-poetry: poetry-install
+    @echo "Serving the site locally using Poetry"
+    poetry run mkdocs serve
+
 # Make everything ready for a PR
 pr:
     @just format-check
@@ -72,3 +77,8 @@ npm-install:
 npm-clean:
     @echo "Cleaning NPM cache"
     rm -rf node_modules/ .pnpm-store/
+
+# Install Poetry dependencies
+poetry-install:
+    @echo "Installing Poetry dependencies"
+    poetry install --no-root

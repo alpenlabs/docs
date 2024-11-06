@@ -29,6 +29,12 @@ This repository contains all public devnet documentation related to [Strata](htt
 > ```bash
 > docker pull squidfunk/mkdocs-material
 > ```
+>
+> Alternatively you can use the `pyproject.toml` Poetry environment:
+>
+> ```bash
+> poetry install --no-root
+> ```
 
 ## Making Changes
 
