@@ -30,6 +30,7 @@ preconfirmations
 println
 pseudocode
 pubkey
+pyproject
 roadmaps
 rollups
 satoshis
