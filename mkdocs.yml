@@ -37,7 +37,7 @@ theme:
     - content.code.copy
     - content.code.annotate
 extra:
-  homepage: https://stratabtc.org
+  homepage: https://docs.stratabtc.org
   generator: false
 markdown_extensions:
   - tables
