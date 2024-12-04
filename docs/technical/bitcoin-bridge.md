@@ -67,17 +67,22 @@ who sends 10[^fees] BTC to a P2TR address, where:
     This can be verified by revealing the random scalar $r$
     used to generate the pubkey by shifting the NUMS point.
 
+<!-- prettier-ignore-start -->
+
 1. The script path spend has two paths:
-   1. "Deposit path", an $N$-of-$N$ multisig path,
-      where $N$ is the number of operators in the bridge.
-      Note that this uses Schnorr key aggregation,
-      hence the signature is aggregated into a single signature that
-      validates all $N$ operators' signatures.
-   1. "Take back" path,
-      which allows the user to take back their funds if the bridge fails to
-      move funds from the Deposit Request Transaction (DRT)
-      into the bridge address within approximately 8.5 hours,
-      i.e. it is time-locked and the user can spend it by providing a signature.
+    1. "Deposit path", an $N$-of-$N$ multisig path,
+       where $N$ is the number of operators in the bridge.
+       Note that this uses Schnorr key aggregation,
+       hence the signature is aggregated into a single signature that
+       validates all $N$ operators' signatures.
+
+    1. "Take back" path,
+       which allows the user to take back their funds if the bridge fails to
+       move funds from the Deposit Request Transaction (DRT)
+       into the bridge address within approximately 8.5 hours,
+       i.e. it is time-locked and the user can spend it by providing a signature.
+
+<!-- prettier-ignore-end -->
 
 This transaction has some metadata attached to it, in the form of an `OP_RETURN`
 output, that must be the **second** output of the transaction in order for the
